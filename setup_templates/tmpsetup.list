@@ -1,0 +1,2 @@
+##deb [ trusted=yes ] https://repo.virtualbox.com/debian stable main
+##deb [ trusted=yes signed-by=/usr/share/keyrings/virtualbox-stable-archive-keyring.gpg ] https://repo.virtualbox.com/debian stable main
