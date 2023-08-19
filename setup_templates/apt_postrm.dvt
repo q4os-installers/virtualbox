@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+if [ "$1" = remove ] ; then
+  set +e
+  echo "Removing Virtualbox repositories ..."
+  rm -f /etc/apt/sources.list.d/50_q4os-virtualbox.list
+  set -e
+fi
