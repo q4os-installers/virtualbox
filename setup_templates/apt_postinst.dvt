@@ -35,6 +35,14 @@ case "$1" in
         exit 0
       fi
 
+      addgroup --system vboxusers
+      FUSRNAME="$( getent passwd 1000 | awk -F':' '{ print $1 }' )"
+      if [ -n "$FUSRNAME" ] ; then
+        #add first user to the appropriate groups ; todo: add all users as well
+        echo "Adding first user [$FUSRNAME] to related system groups ..."
+        usermod -a -G vboxusers $FUSRNAME
+      fi
+
       set -e
     ;;
 
