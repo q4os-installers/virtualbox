@@ -1,0 +1,15 @@
+#!/bin/sh
+
+unset LC_ALL
+
+if [ "$APPSETUP2_NONITERACTIVE" = "1" ] || [ "$( id -u )" = "0" ] ; then
+  ANONINTERACTIVE="1"
+fi
+
+if q4hw-info --secure-boot ; then
+  if [ -z "$ANONINTERACTIVE" ] ; then
+    /opt/trinity/bin/kdialog --title "Virtualbox - Setup" --caption "" --icon "package_settings" --sorry "<p>Secure Boot is enabled, so the Virtualbox kernel modules must be signed. You need turn secure boot off, or sign the Virtualbox kernel modules with a proper signing key before setting up. Canceling setup ...</p>" &
+  fi
+  echo "Secure boot enabled, so virtualbox kernel modules must be signed. Canceling setup ..."
+  exit 19
+fi

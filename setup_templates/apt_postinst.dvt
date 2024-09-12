@@ -12,7 +12,6 @@ set -e
 #          <conflicting-package> <version>
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
-#
 
 case "$1" in
     configure)
@@ -36,7 +35,9 @@ case "$1" in
       fi
 
       addgroup --system vboxusers
+      echo "Configuring Virtualbox ..."
       FUSRNAME="$( dash /usr/share/apps/q4os_system/bin/get_first_user.sh --name )"
+      echo "First user: [$FUSRNAME]"
       if [ -n "$FUSRNAME" ] ; then
         #add first user to the appropriate groups ; todo: add all users as well
         echo "Adding first user [$FUSRNAME] to related system groups ..."
