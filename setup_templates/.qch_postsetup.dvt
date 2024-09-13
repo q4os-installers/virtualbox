@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$APPSETUP2_NONITERACTIVE" = "1" ] ; then
+  echo "Reboot as soon as possible for kernel to load Virtualbox modules."
+  exit 0
+fi
+
+MSG1="<p>You have successfully installed Virtualbox.</p><p>Please reboot as soon as possible for kernel to load Virtualbox modules.</p><p><br></p>"
+kdialog --title "Virtualbox" --msgbox "$MSG1" #--icon ...
