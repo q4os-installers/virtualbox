@@ -1,2 +1,2 @@
 deb [trusted=yes arch=amd64] https://q4os.sourceforge.io/qexarepo/virtualbox bookworm-virtualbox-cn main
-deb [signed-by=/usr/share/keyrings/q4a-vbox_oracle.gpg trusted=yes arch=amd64] http://download.virtualbox.org/virtualbox/debian bookworm contrib non-free
+deb [trusted=yes arch=amd64 signed-by=/usr/share/keyrings/q4a-vbox_oracle.gpg] http://download.virtualbox.org/virtualbox/debian bookworm contrib non-free
