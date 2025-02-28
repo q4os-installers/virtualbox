@@ -1,0 +1,17 @@
+Source: virtualbox-extq
+Section: none
+Priority: optional
+Maintainer: Q4OS Team <devteam@q4os.org>
+Build-Depends: debhelper (>= 9~), q4os-devpack-base
+Standards-Version: 3.8.4
+
+Package: virtualbox-extq
+Architecture: amd64
+Pre-Depends: virtualbox-7.1
+Depends: q4os-desktop (>= 4.0)
+Recommends: gir1.2-gtk-3.0
+Conflicts: q4os-virtualbox
+Provides: virtualbox-extq
+Replaces:
+Breaks:
+Description: Virtualbox metapackage

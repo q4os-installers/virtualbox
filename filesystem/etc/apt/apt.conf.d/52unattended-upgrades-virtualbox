@@ -1,0 +1,8 @@
+Unattended-Upgrade::Origins-Pattern {
+ "o=virtualbox.qexarepo.q4os.org,n=${distro_codename}-virtualbox-cn";
+ "n=${distro_codename},l=Oracle Corporation";
+};
+
+//?or
+//Unattended-Upgrade::Allowed-Origins:: "??q4os.org:${distro_codename}-virtualbox-cn";
+//Unattended-Upgrade::Allowed-Origins:: "??Virtualbox:${distro_codename}";

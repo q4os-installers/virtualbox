@@ -17,12 +17,15 @@ case "$1" in
     configure)
       set +e
 
-      REPOFL1="/etc/apt/sources.list.d/50_q4os-virtualbox.list"
+      REPOFL1="/etc/apt/sources.list.d/50_virtualbox-extq.list"
       if [ ! -f "$REPOFL1" ] || [ -n "$( head -n1 $REPOFL1 2>/dev/null | grep '_subst_vbox_codename_' )" ] ; then
         echo "Virtualbox seems not to be configured, going to do so ..."
         QDSTRA="$( dash /usr/share/apps/q4os_system/bin/print_qaptdistr.sh )"
         echo "Distro [$QDSTRA], adding repositories, configuring ..."
-        if [ "$QDSTRA" = "bookworm" ] ; then
+        if [ "$QDSTRA" = "trixie" ] ; then
+          echo 'deb [arch=amd64] https://q4os.sourceforge.io/qexarepo/virtualbox trixie-virtualbox-cn main' > "$REPOFL1"
+          echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/q4a-vbox_oracle.gpg] http://download.virtualbox.org/virtualbox/debian trixie contrib non-free' >> "$REPOFL1"
+        elif [ "$QDSTRA" = "bookworm" ] ; then
           echo 'deb [arch=amd64] https://q4os.sourceforge.io/qexarepo/virtualbox bookworm-virtualbox-cn main' > "$REPOFL1"
           echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/q4a-vbox_oracle.gpg] http://download.virtualbox.org/virtualbox/debian bookworm contrib non-free' >> "$REPOFL1"
         elif [ "$QDSTRA" = "bullseye" ] ; then
@@ -32,7 +35,7 @@ case "$1" in
       fi
 
       if [ -n "$2" ] ; then
-        echo "ok, looks like an upgrade, exiting postinst now ...."
+        echo "Ok, looks like an upgrade, exiting postinst now ...."
         exit 0
       fi
 
