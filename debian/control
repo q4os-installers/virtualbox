@@ -7,7 +7,7 @@ Standards-Version: 3.8.4
 
 Package: virtualbox-extq
 Architecture: amd64
-Pre-Depends: virtualbox-7.1
+Pre-Depends: virtualbox-7.2 | virtualbox-7.1
 Depends: q4os-desktop (>= 4.0)
 Recommends: gir1.2-gtk-3.0
 Conflicts: q4os-virtualbox
