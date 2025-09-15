@@ -1,3 +1,10 @@
+virtualbox-extq (1.2-a1) UNRELEASED; urgency=medium
+
+  * Minor add comment
+  * Add Virtualbox-7.2 support
+
+ -- Q4OS Team <devteam@q4os.org>  Mon, 15 Sep 2025 17:23:03 +0200
+
 virtualbox-extq (1.1-a1) UNRELEASED; urgency=medium
 
   * Release.
