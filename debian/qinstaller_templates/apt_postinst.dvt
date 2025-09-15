@@ -13,6 +13,26 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+#
+# #todo: move sources to deb822 format:
+#
+# Enabled: yes
+# Types: deb
+# Architectures: amd64
+# URIs: https://q4os.sourceforge.io/qexarepo/virtualbox
+# Suites: trixie-virtualbox-cn
+# Components: main
+# Signed-By: /usr/share/keyrings/q4a-q4os.gpg
+#
+# Enabled: yes
+# Types: deb
+# Architectures: amd64
+# URIs: http://download.virtualbox.org/virtualbox/debian
+# Suites: trixie
+# Components: contrib non-free
+# Signed-By: /usr/share/keyrings/q4a-vbox_oracle.gpg
+#
+
 case "$1" in
     configure)
       set +e
